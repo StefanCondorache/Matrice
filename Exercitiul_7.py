@@ -8,12 +8,25 @@ print('a)Direct  b)Gray  c)Aiken  d)Exces 3')
 print('Scrieti litera corespunzatoare codului:')
 cod=str(input())
 if cod in ['a','b','c','d']:
-    print('Cate cifre doriti sa codificati:')
-    nr=int(input())
-    list1,list2=[],[]
-    for i in range(nr):
-        nri=int(input('cifra:'))
-        list1.append(nri)
-        list2.append(coduri[cod][str(nri)])
-    print(' ',list1,'\n ',list2)
+    print('a)cifre  b)numar ?')
+    nri2=str(input())
+    if nri2 in ['a','b']:
+        if nri2=='a':
+            print('Cate cifre doriti sa codificati:')
+            nr=int(input())
+            list1,list2=[],[]
+            for i in range(nr):
+                nri=int(input('cifra:'))
+                list1.append(nri)
+                list2.append(coduri[cod][str(nri)])
+            print(' ',list1,'\n ',list2)
+        else:
+            list1,list2=[],[]
+            print('numarul pe care doriti sa-l codificati:')
+            nri=int(input())
+            list1.extend(str(nri))
+            for i in list1:
+                list2.append(coduri[cod][i])
+            print(' ',nri,'\n ',list2)
+    else: print('Error')
 else: print('Error')
